@@ -26,6 +26,7 @@ const Login = () => {
                                 <button className="btn btn-primary">Login</button>
                             </div>
                         </form>
+                        <button className="btn rounded-full mx-auto mb-5">Google</button>
                         <button className="pb-5">Don&apos;t have an account? <Link to={`/registration`} className="text-blue-600 font-semibold">Registration</Link></button>
                     </div>
                 </div>
