@@ -1,19 +1,15 @@
-import { useContext, useEffect, useState } from "react";
-import { useNavigate } from 'react-router-dom';
+import { useContext, useState } from "react";
+import { useLoaderData, useNavigate } from 'react-router-dom';
 import { AuthContext } from "../../providers/AuthProvider";
 
 const AllToys = () => {
     const { user } = useContext(AuthContext);
     const navigate = useNavigate();
+    // fetch data from server
+    const loadingData = useLoaderData();
     // toys state
-    const [allToys, setAllToys] = useState([]);
-    const [singleToy, setToy] = useState(null)
-    // toys fetch from server
-    useEffect(() => {
-        fetch('http://localhost:5000/toys')
-            .then(res => res.json())
-            .then(data => setAllToys(data))
-    }, [])
+    const [allToys, setAllToys] = useState(loadingData);
+    const [singleToy, setToy] = useState(null);
     // single toy details button
     const handleToy = id => {
         const toy = allToys.find(t => t._id === id);
@@ -26,8 +22,26 @@ const AllToys = () => {
             document.getElementById('my_modal_1').showModal()
         }
     }
+    // search button
+    const handleSearch = event => {
+        event.preventDefault();
+        const form = event.target;
+        const name = form.name.value;
+        const found = [];
+        for (const toy of loadingData) {
+            if (toy.toy_name.toLowerCase().includes(name.toLowerCase())) {
+                found.push(toy);
+            }
+        }
+        setAllToys(found);
+    }
     return (
         <div className="w-11/12 md:w-10/12 mx-auto my-20">
+            {/* search button */}
+            <form onSubmit={handleSearch} className="flex justify-center my-20">
+                <input type="text" name="name" placeholder="toy name search here" className="input input-bordered border-e-0 rounded-e-none w-full max-w-xs" />
+                <button className="btn rounded-s-none">Enter</button>
+            </form>
             <div className="overflow-x-auto">
                 <table className="table">
                     {/* head */}
