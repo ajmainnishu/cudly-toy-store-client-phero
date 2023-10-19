@@ -1,9 +1,17 @@
 import { Link } from 'react-router-dom';
 import logo from '../assets/logo/logo.png';
+import { useContext } from 'react';
+import { AuthContext } from '../providers/AuthProvider';
+import userPhoto from '../assets/navigation/userphoto.jpg';
 
 const Navigation = () => {
+    const { user, userLogOut } = useContext(AuthContext);
+    // logout button
+    const handleLogOut = () => {
+        userLogOut();
+    }
     return (
-        <div className='bg-base-100'>
+        <div className='bg-base-200'>
             <div className="navbar w-12/12 md:w-10/12 mx-auto">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -36,7 +44,19 @@ const Navigation = () => {
                 </div>
                 {/* button */}
                 <div className="navbar-end">
-                    <Link to={`/login`} className="btn">Login</Link>
+                    {/* login button */}
+                    {!user && <Link to={`/login`} className="btn btn-neutral">Login</Link>}
+                    {/* user profile button */}
+                    {user && <div className="dropdown dropdown-end">
+                        <label tabIndex={0} className="btn btn-ghost btn-circle avatar tooltip capitalize tooltip-left" data-tip={user?.displayName}>
+                            <div className="w-10 rounded-full">
+                                <img src={user?.photoURL ? user?.photoURL : userPhoto} className='border rounded-full' />
+                            </div>
+                        </label>
+                        <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+                            <li><button onClick={handleLogOut}>Logout</button></li>
+                        </ul>
+                    </div>}
                 </div>
             </div>
         </div>

@@ -1,26 +1,27 @@
 import { useLoaderData } from "react-router-dom";
 
-
 const SingleToy = () => {
+    // fetch single data from server
     const loadingData = useLoaderData();
     const { toy_img, toy_name, seller_name, seller_email, price, rating, quantity, details } = loadingData;
     return (
-        <div>
-            <h2>{seller_name}</h2>
-            {/* Open the modal using document.getElementById('ID').showModal() method */}
-            <button className="btn" onClick={() => document.getElementById('my_modal_1').showModal()}>open modal</button>
-            <dialog id="my_modal_1" className="modal">
-                <div className="modal-box">
-                    <h3 className="font-bold text-lg">Hello!</h3>
-                    <p className="py-4">Press ESC key or click the button below to close</p>
-                    <div className="modal-action">
-                        <form method="dialog">
-                            {/* if there is a button in form, it will close the modal */}
-                            <button className="btn">Close</button>
-                        </form>
+        <div className="w-11/12 md:w-10/12 mx-auto">
+            <div className="hero min-h-screen">
+                <div className="hero-content flex-col lg:flex-row">
+                    <img src={toy_img} alt="toy image" className="max-w-sm rounded-lg shadow-2xl w-full" />
+                    <div className="space-y-3">
+                        <h1 className="text-5xl font-bold">{toy_name}</h1>
+                        <p>Seller Name: {seller_name}</p>
+                        <p>Seller Email: {seller_email}</p>
+                        <p>Price: $ {price}</p>
+                        <p>Rating: {rating}</p>
+                        <p>Available Quantity: {quantity}</p>
+                        <p>Details: {details}</p>
                     </div>
                 </div>
-            </dialog>
+            </div>
+
+
         </div>
     );
 };
