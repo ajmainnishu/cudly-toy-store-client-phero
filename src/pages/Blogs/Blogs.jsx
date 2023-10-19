@@ -1,7 +1,8 @@
 const Blogs = () => {
     return (
-        <div>
-            <div className="collapse collapse-arrow bg-base-200">
+        <div className="w-11/12 md:w-10/12 mx-auto my-20">
+            {/* item 1 */}
+            <div className="collapse collapse-arrow">
                 <input type="radio" name="my-accordion-2" checked="checked" />
                 <div className="collapse-title text-xl font-medium">
                     What is an access token and refresh token? How do they work and where should we store them on the client-side?
@@ -10,7 +11,8 @@ const Blogs = () => {
                     <p>A refresh token just helps you re-validate a user without them having to re-enter their login credentials multiple times. The access token is re-issued, provided the refresh token is a valid one requesting permission to access confidential resources. <br /> At a high level, these each serve different purposes. The access token allows for access to different APIs and protected resources. The refresh token lets you mint new access tokens. The id token from OpenID Connect (OIDC) is used by the client to display information about the user.</p>
                 </div>
             </div>
-            <div className="collapse collapse-arrow bg-base-200">
+            {/* item 2 */}
+            <div className="collapse collapse-arrow">
                 <input type="radio" name="my-accordion-2" />
                 <div className="collapse-title text-xl font-medium">
                     Compare SQL and NoSQL databases?
@@ -19,7 +21,8 @@ const Blogs = () => {
                     <p>SQL databases are relational, and NoSQL databases are non-relational. SQL databases use structured query language (SQL) and have a predefined schema. NoSQL databases have dynamic schemas for unstructured data. SQL databases are vertically scalable, while NoSQL databases are horizontally scalable.</p>
                 </div>
             </div>
-            <div className="collapse collapse-arrow bg-base-200">
+            {/* item 3 */}
+            <div className="collapse collapse-arrow">
                 <input type="radio" name="my-accordion-2" />
                 <div className="collapse-title text-xl font-medium">
                     What is express js? What is Nest JS?
@@ -30,7 +33,8 @@ const Blogs = () => {
                     </p>
                 </div>
             </div>
-            <div className="collapse collapse-arrow bg-base-200">
+            {/* item 3 */}
+            <div className="collapse collapse-arrow">
                 <input type="radio" name="my-accordion-2" />
                 <div className="collapse-title text-xl font-medium">
                     What is MongoDB aggregate and how does it work?

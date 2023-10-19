@@ -3,8 +3,8 @@ import logo from '../assets/logo/logo.png';
 
 const Navigation = () => {
     return (
-        <div>
-            <div className="navbar bg-base-100">
+        <div className='bg-base-100'>
+            <div className="navbar w-12/12 md:w-10/12 mx-auto">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -13,7 +13,7 @@ const Navigation = () => {
                         {/* small device */}
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                             <li><Link to={`/`}>Home</Link></li>
-                            <li><Link>All Toys</Link></li>
+                            <li><Link to={`all-toys`}>All Toys</Link></li>
                             <li><Link>My Toys</Link></li>
                             <li><Link>Add A Toy</Link></li>
                             <li><Link to={`/blogs`}>Blogs</Link></li>
@@ -28,7 +28,7 @@ const Navigation = () => {
                     {/* large device */}
                     <ul className="menu menu-horizontal px-1">
                         <li><Link to={`/`}>Home</Link></li>
-                        <li><Link>All Toys</Link></li>
+                        <li><Link to={`all-toys`}>All Toys</Link></li>
                         <li><Link>My Toys</Link></li>
                         <li><Link>Add A Toy</Link></li>
                         <li><Link to={`/blogs`}>Blogs</Link></li>

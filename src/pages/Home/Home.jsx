@@ -6,12 +6,14 @@ import Sponsor from "./Sponsor/Sponsor";
 
 const Home = () => {
     return (
-        <div>
+        <div className="space-y-20">
             <Banner></Banner>
-            <Gallery></Gallery>
-            <Categories></Categories>
-            <BuyKids></BuyKids>
-            <Sponsor></Sponsor>
+            <div className="w-11/12 md:w-10/12 mx-auto space-y-20 pb-20">
+                <Gallery></Gallery>
+                <Categories></Categories>
+                <BuyKids></BuyKids>
+                <Sponsor></Sponsor>
+            </div>
         </div>
     );
 };

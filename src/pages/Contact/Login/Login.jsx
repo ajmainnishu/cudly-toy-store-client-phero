@@ -10,23 +10,28 @@ const Login = () => {
                     </div>
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                         <form className="card-body">
+                            {/* email */}
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
                                 <input type="email" placeholder="email" className="input input-bordered" required />
                             </div>
+                            {/* password */}
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
                                 <input type="password" placeholder="password" className="input input-bordered" required />
                             </div>
+                            {/* form button */}
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary">Login</button>
                             </div>
                         </form>
+                        {/* google button */}
                         <button className="btn rounded-full mx-auto mb-5">Google</button>
+                        {/* registration page redirect */}
                         <button className="pb-5">Don&apos;t have an account? <Link to={`/registration`} className="text-blue-600 font-semibold">Registration</Link></button>
                     </div>
                 </div>

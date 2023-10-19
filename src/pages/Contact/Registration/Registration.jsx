@@ -10,24 +10,28 @@ const Registration = () => {
                     </div>
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                         <form className="card-body">
+                            {/* name */}
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Name</span>
                                 </label>
                                 <input type="text" placeholder="name" className="input input-bordered" required />
                             </div>
+                            {/* photo */}
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Photo URL</span>
                                 </label>
                                 <input type="text" placeholder="photo url" className="input input-bordered" required />
                             </div>
+                            {/* email */}
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
                                 <input type="email" placeholder="email" className="input input-bordered" required />
                             </div>
+                            {/* password */}
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Password</span>
@@ -37,10 +41,12 @@ const Registration = () => {
                                     <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                 </label>
                             </div>
+                            {/* form button */}
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary">Registration</button>
                             </div>
                         </form>
+                        {/* login page redirect */}
                         <button className="pb-5">Already have an account? <Link to={`/login`} className="text-blue-600 font-semibold">Login</Link></button>
                     </div>
                 </div>

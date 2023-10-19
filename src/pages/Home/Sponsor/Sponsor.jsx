@@ -7,7 +7,7 @@ import sponsor6 from '../../../assets/sponser/sponser-6.png'
 
 const Sponsor = () => {
     return (
-        <div className='grid grid-cols-6 gap-3'>
+        <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3'>
             <img src={sponsor1} alt="sponsor image" />
             <img src={sponsor2} alt="sponsor image" />
             <img src={sponsor3} alt="sponsor image" />
