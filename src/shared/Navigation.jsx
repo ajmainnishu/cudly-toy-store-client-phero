@@ -22,7 +22,7 @@ const Navigation = () => {
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                             <li><Link to={`/`}>Home</Link></li>
                             <li><Link to={`all-toys`}>All Toys</Link></li>
-                            <li><Link>My Toys</Link></li>
+                            <li><Link to={`/my-toys`}>My Toys</Link></li>
                             <li><Link to={`/add-toy`}>Add A Toy</Link></li>
                             <li><Link to={`/blogs`}>Blogs</Link></li>
                         </ul>
@@ -37,7 +37,7 @@ const Navigation = () => {
                     <ul className="menu menu-horizontal px-1">
                         <li><Link to={`/`}>Home</Link></li>
                         <li><Link to={`all-toys`}>All Toys</Link></li>
-                        <li><Link>My Toys</Link></li>
+                        <li><Link to={`/my-toys`}>My Toys</Link></li>
                         <li><Link to={`/add-toy`}>Add A Toy</Link></li>
                         <li><Link to={`/blogs`}>Blogs</Link></li>
                     </ul>

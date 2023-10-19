@@ -12,7 +12,7 @@ const Footer = () => {
                     <Link to={`/`} className="link link-hover">Home</Link>
                     <Link to={`/blogs`} className="link link-hover">Blogs</Link>
                     <Link to={`/all-toys`} className="link link-hover">All Toys</Link>
-                    <Link className="link link-hover">My Toys</Link>
+                    <Link to={`/my-toys`} className="link link-hover">My Toys</Link>
                 </nav>
                 {/* item 2 */}
                 <nav>
