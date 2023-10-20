@@ -1,3 +1,4 @@
+import useTitle from "../../hooks/usetitle";
 import Banner from "./Banner/Banner";
 import BuyKids from "./BuyKids/BuyKids";
 import Categories from "./Categories/Categories";
@@ -5,6 +6,8 @@ import Gallery from "./Gallery/Gallery";
 import Sponsor from "./Sponsor/Sponsor";
 
 const Home = () => {
+    // dynamic title
+    useTitle('');
     return (
         <div className="space-y-20">
             <Banner></Banner>

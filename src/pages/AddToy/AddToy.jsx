@@ -1,8 +1,11 @@
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import { ToastContainer, toast } from 'react-toastify';
+import useTitle from "../../hooks/usetitle";
 
 const AddToy = () => {
+    // dynamic title
+    useTitle('| Add Toy');
     const { user } = useContext(AuthContext);
     // login button
     const handleAddToy = event => {

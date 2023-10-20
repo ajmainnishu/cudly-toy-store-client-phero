@@ -1,8 +1,11 @@
 import { useContext, useState } from "react";
 import { useLoaderData, useNavigate } from 'react-router-dom';
 import { AuthContext } from "../../providers/AuthProvider";
+import useTitle from "../../hooks/usetitle";
 
 const AllToys = () => {
+    // dynamic title
+    useTitle('| All Toys');
     const { user } = useContext(AuthContext);
     const navigate = useNavigate();
     // fetch data from server

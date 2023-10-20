@@ -2,8 +2,11 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from 'sweetalert2';
 import { useNavigate } from "react-router-dom";
+import useTitle from "../../hooks/usetitle";
 
 const MyToys = () => {
+    // dynamic title
+    useTitle('| My Toys');
     const { user } = useContext(AuthContext);
     const navigate = useNavigate();
     // fetch all date from email from server

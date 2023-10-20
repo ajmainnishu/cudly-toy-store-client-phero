@@ -1,4 +1,8 @@
+import useTitle from "../../hooks/usetitle";
+
 const Blogs = () => {
+    // dynamic title
+    useTitle('| Blogs');
     return (
         <div className="w-11/12 md:w-10/12 mx-auto my-20">
             {/* item 1 */}
