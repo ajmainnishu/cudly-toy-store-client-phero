@@ -1,9 +1,11 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from 'sweetalert2';
+import { useNavigate } from "react-router-dom";
 
 const MyToys = () => {
     const { user } = useContext(AuthContext);
+    const navigate = useNavigate();
     // fetch all date from email from server
     const [userBook, setUserBook] = useState([]);
     // fetch single user data from server
@@ -11,11 +13,20 @@ const MyToys = () => {
     const url = `http://localhost:5000/toy?email=${user?.email}`
     useEffect(() => {
         fetch(url, {
-            method: 'GET'
+            method: 'GET',
+            headers: {
+                'authorization': `Bearer ${localStorage.getItem('token')}`
+            }
         })
             .then(res => res.json())
-            .then(data => setUserBook(data))
-    }, [url, userBook])
+            .then(data => {
+                if (!data.error) {
+                    setUserBook(data)
+                } else {
+                    navigate('/')
+                }
+            })
+    }, [url, userBook, navigate])
     // update button
     const handleUpdate = id => {
         fetch(`http://localhost:5000/toy/${id}`)

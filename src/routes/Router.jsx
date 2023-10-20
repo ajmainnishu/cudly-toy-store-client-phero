@@ -9,6 +9,7 @@ import SingleToy from "../pages/Home/Categories/SingleToy";
 import PrivateRoute from "./PrivateRoute";
 import AddToy from "../pages/AddToy/AddToy";
 import MyToys from "../pages/MyToys/MyToys";
+import EmptyPage from "../EmptyPage/EmptyPage";
 
 const router = createBrowserRouter([
     {
@@ -43,13 +44,17 @@ const router = createBrowserRouter([
             },
             {
                 path: 'add-toy',
-                element: <AddToy />
+                element: <PrivateRoute><AddToy /></PrivateRoute>
             },
             {
                 path: 'my-toys',
-                element: <MyToys />
+                element: <PrivateRoute><MyToys /></PrivateRoute>
             }
         ]
+    },
+    {
+        path: '*',
+        element: <EmptyPage />
     }
 ])
 
